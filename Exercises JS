@@ -1,0 +1,86 @@
+// ++++++++++++ EXERCISES JS ++++++++++ //
+
+
+// ------------------  EXERCISE 1 ------------------ // 
+
+// -- Write a function to find the maximum of two numbers:
+
+function max(num1, num2) {
+    if (num1 > num2) return num1;
+    return num2; // implicit else
+}
+
+let maxOfTwo = max(3, 4); // TEST
+console.log(maxOfTwo); // we give arguments to the funcion and store it
+// in a variable to print it and test in the console 
+
+
+// or
+
+function max(num1, num2) {
+    return (num1 > num2) ? num1 : num2;
+} // best, cleaner solution return the truthy or falsy
+// depending on the evaluation of the condition (num1 > num2)
+
+
+
+// ---------------- EXERCISE 2 --------------------- //
+
+// -- Landscape or Portrait? 
+// -- Implement function isLandscape
+
+function isLandscape(width, height) {
+    return (width > height); 
+}
+// if width > height, it is landscape
+// we don't need to explicitly write the ternary operator
+// because the return statement is already going
+// to give us "true" if what is insie the parenthesis
+// is true, and vice versa. so we basically write
+// return (width > height); 
+// instead of 
+// return (width > height) ? true : false;
+// the ternary operator would be useful if we wanted
+// to return "different" values, a truthy or falsy,
+// example above when we wanted to return the
+// value of num1 or num2 and not true/false. 
+
+console.log(isLandscape(800, 600)); // TEST
+// here we are simply calling the function and we will print whatever 
+// the function returns, which means we will print true or false.
+
+
+// ---------------- EXERCISE 3 --------------------- //
+
+// FizzBuzz - Number is divisible by ?
+// Divisible by 3 -> Fizz
+// Divisible by 5 -> Buzz
+// Divisible by both 3 and 5 -> FizzBuzz
+// Not divisible by 3 or 5 -> input 
+// Not a number -> "Not a number"
+
+const output fizzBuzz(7); // here I insert any number just to test
+console.log(output);
+
+function fizzBuzz(input) {
+    if (typeof input !== 'number')
+        return NaN;
+
+    if ((input % 3 === 0) && (input % 5 === 0))
+        return 'FizzBuzz';
+
+    if (input % 3 === 0)
+        return 'Fizz';
+
+    if (input % 5 === 0)
+        return 'Buzz';
+
+    return input; 
+}
+
+// first evaluate if the number is multiple of
+// both 3 and 5, otherwise if we start evaluating 
+// if its multiple of 3, and it's true, the loop breaks
+// and does not continue evaluating if it's multiple
+// of 5
+
